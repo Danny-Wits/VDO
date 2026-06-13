@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
@@ -30,18 +30,21 @@ export default function Sidebar() {
     })
 
     // Setup ScrollTriggers for each section to update the active state
-    sections.forEach((sec) => {
-      ScrollTrigger.create({
-        trigger: `#${sec.id}`,
-        start: "top center",
-        end: "bottom center",
-        onToggle: (self) => {
-          if (self.isActive) {
-            setActiveSection(sec.id)
-          }
-        }
+    // We use refreshPriority: -1 so these triggers calculate their start/end
+    // AFTER other components (like ProcessScroll) have created their pins
+    setTimeout(() => {
+      sections.forEach((sec) => {
+        ScrollTrigger.create({
+          trigger: `#${sec.id}`,
+          start: "top center",
+          end: "bottom center",
+          refreshPriority: -1,
+          onEnter: () => setActiveSection(sec.id),
+          onEnterBack: () => setActiveSection(sec.id)
+        })
       })
-    })
+      ScrollTrigger.refresh()
+    }, 100)
   }, [])
 
   const scrollTo = (id) => {

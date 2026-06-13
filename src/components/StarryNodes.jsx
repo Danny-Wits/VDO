@@ -1,7 +1,7 @@
 import React, { useRef, useMemo } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
-import { Line, Icosahedron } from '@react-three/drei'
+import { Line } from '@react-three/drei'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
@@ -35,11 +35,10 @@ function OrganicNodeTree({ count = 40 }) {
   const group = useRef()
   const meshRef = useRef()
 
-  const { positions, lines, dummy } = useMemo(() => {
+  const [data] = React.useState(() => {
     const positions = []
     const temp = []
-    const dummy = new THREE.Object3D()
-
+    
     // Create a 3D tunnel/tree structure
     for (let i = 0; i < count; i++) {
       const v = new THREE.Vector3(
@@ -60,28 +59,35 @@ function OrganicNodeTree({ count = 40 }) {
         }
       }
     }
-    return { positions, lines, dummy }
-  }, [count])
+    
+    const extras = positions.map(() => ({
+      scale: 0.5 + Math.random() * 0.8,
+      rotX: Math.random() * Math.PI,
+      rotY: Math.random() * Math.PI
+    }))
+    
+    return { positions, lines, extras }
+  })
+
+  const dummy = useMemo(() => new THREE.Object3D(), [])
 
   // Initialize instances
-  useMemo(() => {
+  React.useLayoutEffect(() => {
     if (meshRef.current) {
-      positions.forEach((pos, i) => {
+      data.positions.forEach((pos, i) => {
         dummy.position.copy(pos)
         
-        // Random scale for nodes
-        const scale = 0.5 + Math.random() * 0.8
-        dummy.scale.set(scale, scale, scale)
-        
-        // Random rotation
-        dummy.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, 0)
+        // Apply pre-calculated random scale and rotation
+        const ext = data.extras[i]
+        dummy.scale.setScalar(ext.scale)
+        dummy.rotation.set(ext.rotX, ext.rotY, 0)
         
         dummy.updateMatrix()
         meshRef.current.setMatrixAt(i, dummy.matrix)
       })
       meshRef.current.instanceMatrix.needsUpdate = true
     }
-  }, [positions, dummy])
+  }, [data, dummy])
 
   // Pre-allocate a vector for extracting scale outside the loop to prevent GC leaks
   const tempScale = useMemo(() => new THREE.Vector3(), [])
@@ -94,7 +100,7 @@ function OrganicNodeTree({ count = 40 }) {
     
     // Slowly rotate instances
     if (meshRef.current) {
-      positions.forEach((pos, i) => {
+      data.positions.forEach((pos, i) => {
         meshRef.current.getMatrixAt(i, dummy.matrix)
         dummy.position.copy(pos)
         
@@ -125,7 +131,7 @@ function OrganicNodeTree({ count = 40 }) {
         />
       </instancedMesh>
       
-      {lines.map((pts, i) => (
+      {data.lines.map((pts, i) => (
         <Line key={i} points={pts} color="#8b5a2b" opacity={0.6} transparent lineWidth={1.5} />
       ))}
     </group>

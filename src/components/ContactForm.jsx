@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { TextInput, Textarea, Button } from '@mantine/core'
 import { IconSend } from '@tabler/icons-react'
 import gsap from 'gsap'

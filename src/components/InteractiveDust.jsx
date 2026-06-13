@@ -1,5 +1,5 @@
 import React, { useRef, useMemo } from 'react'
-import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { Canvas, useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger)
 function CinematicMist({ count = 2000 }) {
   const mesh = useRef()
 
-  const particles = useMemo(() => {
+  const [particles] = React.useState(() => {
     const temp = new Float32Array(count * 3)
     for (let i = 0; i < count; i++) {
       temp[i * 3] = (Math.random() - 0.5) * 30
@@ -18,7 +18,7 @@ function CinematicMist({ count = 2000 }) {
       temp[i * 3 + 2] = (Math.random() - 0.5) * 15 - 5
     }
     return temp
-  }, [count])
+  })
 
   useFrame((state) => {
     const time = state.clock.getElapsedTime()
@@ -43,7 +43,7 @@ function ShatteredTimelines({ scrollData, count = 25 }) {
   const dummy = useMemo(() => new THREE.Object3D(), [])
   
   // Store initial positions to calculate explosion spread
-  const initialData = useMemo(() => {
+  const [initialData] = React.useState(() => {
     const data = []
     for (let i = 0; i < count; i++) {
       data.push({
@@ -62,7 +62,7 @@ function ShatteredTimelines({ scrollData, count = 25 }) {
       })
     }
     return data
-  }, [count])
+  })
 
   useFrame((state) => {
     const time = state.clock.getElapsedTime()

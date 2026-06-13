@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { ActionIcon, Slider } from '@mantine/core'
 import { useFullscreenElement } from '@mantine/hooks'
 import { IconPlayerPlayFilled, IconPlayerPauseFilled, IconVolume, IconVolume3, IconMaximize } from '@tabler/icons-react'

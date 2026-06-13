@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import { useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
@@ -140,7 +140,7 @@ export default function App() {
             ))}
           </div>
 
-          <p className="hero-subtitle mt-8 text-xl md:text-3xl font-sans tracking-[0.3em] text-primary uppercase drop-shadow-lg">
+          <p className="hero-subtitle mt-8 text-lg md:text-3xl font-sans tracking-[0.3em] text-primary uppercase drop-shadow-lg">
             Organic Cinematic Cuts
           </p>
 
