@@ -75,6 +75,7 @@ export default function ContactForm() {
 
           <div className="contact-element">
             <Button 
+              type="submit"
               size="xl" 
               fullWidth 
               color="wood.8"

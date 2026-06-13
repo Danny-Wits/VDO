@@ -80,6 +80,7 @@ export default function ShowreelGallery() {
       onLeaveBack: () => { clearInterval(highlightInterval); cards.forEach(c => c.classList.remove('active')) }
     })
 
+    return () => clearInterval(highlightInterval)
   }, { scope: sectionRef })
 
   return (
