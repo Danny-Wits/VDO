@@ -1,16 +1,37 @@
-# React + Vite
+# High-End Video Production Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, immersive 3D portfolio designed for professional video editors, colorists, and post-production studios. Built with React, Three.js, GSAP, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Immersive 3D Environments**: Custom React Three Fiber canvases with optimized materials, particle swarms, and interactive glass shards.
+- **Scroll-Triggered Animations**: Buttery smooth, 60fps cinematic animations powered by GSAP's ScrollTrigger.
+- **Native Video Player**: Flawless native HTML5 local video playback with custom Mantine controls for a true stealth UI.
+- **Dynamic Timelines**: Visual scroll-tracking progress bars for production phases.
+- **Cinematic Typography**: Powered by **Montserrat** for bold, industry-standard aesthetics.
+- **Performance Optimized**: Achieves a locked 60 FPS by utilizing 3D instanced meshes, smart GC memory management, and early bounding box mathematics.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: [React](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **3D Graphics**: [Three.js](https://threejs.org/) + [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/)
+- **Animation**: [GSAP](https://gsap.com/) + `@gsap/react`
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **UI Components**: [Mantine](https://mantine.dev/)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+
+2. **Run Development Server**
+   ```bash
+   npm run dev
+   ```
+
+3. **Build for Production**
+   ```bash
+   npm run build
+   ```
