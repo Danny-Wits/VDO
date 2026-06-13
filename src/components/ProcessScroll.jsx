@@ -67,14 +67,14 @@ export default function ProcessScroll() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         
         {/* Left Side: Images */}
-        <div className="relative w-full aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-accent/10">
+        <div className="relative w-full aspect-video md:aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-accent/10">
           <img src="/images/timber_falls_1781372030850.png" className="img1 absolute inset-0 w-full h-full object-cover" />
           <img src="/images/whispering_pines_1781372044772.png" className="img2 absolute inset-0 w-full h-full object-cover opacity-0" />
           <img src="/images/deep_roots_1781372057215.png" className="img3 absolute inset-0 w-full h-full object-cover opacity-0" />
         </div>
 
         {/* Right Side: Text Container */}
-        <div className="relative min-h-[400px] md:h-96 flex flex-col justify-center bg-dark/60 backdrop-blur-xl p-8 md:p-12 md:pl-20 rounded-[2rem] border border-accent/10 shadow-2xl overflow-hidden">
+        <div className="relative min-h-[400px] md:h-96 flex flex-col justify-center bg-dark/60 backdrop-blur-xl p-6 md:p-12 md:pl-20 rounded-[2rem] border border-accent/10 shadow-2xl overflow-hidden">
           
           {/* Visual Timeline Progress Bar */}
           <div className="absolute left-6 md:left-10 top-12 bottom-12 w-1 bg-accent/10 rounded-full overflow-hidden flex flex-col justify-between">

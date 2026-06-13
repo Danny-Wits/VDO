@@ -166,8 +166,10 @@ export default function StarryNodes() {
 
         {/* Overlay Text */}
         <div className="relative z-10 w-full h-full flex flex-col items-center justify-center pointer-events-none px-6">
-          <div className="nodes-text text-center bg-dark/40 backdrop-blur-md p-10 rounded-[2rem] border border-accent/10 shadow-2xl max-w-3xl">
-            <h2 className="text-5xl md:text-7xl font-display font-black text-accent mb-4 drop-shadow-2xl">ADVANCED COMPOSITING</h2>
+          <div className="nodes-text relative z-10 text-center pointer-events-none bg-dark/40 backdrop-blur-sm p-8 md:p-12 rounded-[3rem] border border-primary/20 shadow-2xl max-w-4xl mx-4">
+            <h2 className="text-4xl sm:text-6xl md:text-8xl font-display font-black text-accent mb-6 drop-shadow-lg">
+              ADVANCED COMPOSITING
+            </h2>
             <p className="text-primary font-sans text-xl md:text-2xl tracking-wide">
               Industry-standard node-based workflows for seamless visual effects, dynamic motion graphics, and high-end cinematic finishing.
             </p>

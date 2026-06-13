@@ -27,7 +27,7 @@ export default function ContactForm() {
   }, { scope: formRef })
 
   return (
-    <section ref={formRef} className="py-32 px-6 relative z-10">
+    <section ref={formRef} className="py-16 md:py-32 px-6 relative z-10">
       <div className="max-w-3xl mx-auto relative z-10">
         <div className="contact-element text-center mb-16">
           <h2 className="text-5xl font-display font-black text-accent">THE FINAL CUT</h2>

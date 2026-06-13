@@ -133,7 +133,7 @@ export default function App() {
             {title.map((char, index) => (
               <span
                 key={index}
-                className="hero-char text-7xl md:text-[12rem] font-display font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-accent via-accent/80 to-primary/40 inline-block"
+                className="hero-char text-5xl sm:text-7xl md:text-[12rem] font-display font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-accent via-accent/80 to-primary/40 inline-block"
               >
                 {char}
               </span>

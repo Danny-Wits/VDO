@@ -164,7 +164,7 @@ export default function InteractiveDust() {
       
       {/* Floating Text without any glassmorphism box */}
       <div className="dust-text relative z-10 text-center pointer-events-none max-w-4xl px-4">
-        <h2 className="text-6xl md:text-8xl font-display font-black text-transparent bg-clip-text bg-gradient-to-b from-accent to-[#8b5a2b] mb-6 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">
+        <h2 className="text-4xl sm:text-6xl md:text-8xl font-display font-black text-transparent bg-clip-text bg-gradient-to-b from-accent to-[#8b5a2b] mb-6 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">
           FILM EMULATION
         </h2>
         <p className="text-xl md:text-2xl text-accent/90 font-sans max-w-2xl mx-auto drop-shadow-xl font-medium">
