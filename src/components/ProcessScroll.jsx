@@ -57,9 +57,9 @@ export default function ProcessScroll() {
         
       {/* Background images that crossfade */}
       <div className="absolute inset-0 z-0">
-        <img src="/images/timber_falls_1781372030850.png" className="img1 absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-20" />
-        <img src="/images/whispering_pines_1781372044772.png" className="img2 absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-0" />
-        <img src="/images/deep_roots_1781372057215.png" className="img3 absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-0" />
+        <img src={`${import.meta.env.BASE_URL}images/timber_falls_1781372030850.png`} className="img1 absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-20" />
+        <img src={`${import.meta.env.BASE_URL}images/whispering_pines_1781372044772.png`} className="img2 absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-0" />
+        <img src={`${import.meta.env.BASE_URL}images/deep_roots_1781372057215.png`} className="img3 absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-0" />
         <div className="absolute inset-0 bg-dark/80 backdrop-blur-sm pointer-events-none"></div>
       </div>
 
@@ -68,9 +68,9 @@ export default function ProcessScroll() {
         
         {/* Left Side: Images */}
         <div className="relative w-full aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-accent/10">
-          <img src="/images/timber_falls_1781372030850.png" className="img1 absolute inset-0 w-full h-full object-cover" />
-          <img src="/images/whispering_pines_1781372044772.png" className="img2 absolute inset-0 w-full h-full object-cover opacity-0" />
-          <img src="/images/deep_roots_1781372057215.png" className="img3 absolute inset-0 w-full h-full object-cover opacity-0" />
+          <img src={`${import.meta.env.BASE_URL}images/timber_falls_1781372030850.png`} className="img1 absolute inset-0 w-full h-full object-cover" />
+          <img src={`${import.meta.env.BASE_URL}images/whispering_pines_1781372044772.png`} className="img2 absolute inset-0 w-full h-full object-cover opacity-0" />
+          <img src={`${import.meta.env.BASE_URL}images/deep_roots_1781372057215.png`} className="img3 absolute inset-0 w-full h-full object-cover opacity-0" />
         </div>
 
         {/* Right Side: Text Container */}

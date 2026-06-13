@@ -117,7 +117,7 @@ export default function App() {
         {/* Interactive Mouse Parallax Background */}
         <div ref={bgImgRef} className="absolute inset-0 z-0 scale-[1.05] will-change-transform">
           <img
-            src="/images/editing_suite_forest_1781372836042.png"
+            src={`${import.meta.env.BASE_URL}images/editing_suite_forest_1781372836042.png`}
             alt="Cinematic Editing Suite"
             className="absolute inset-0 w-full h-full object-cover opacity-80"
           />
@@ -175,7 +175,7 @@ export default function App() {
             <h2 className="text-4xl md:text-5xl font-display font-bold text-accent mb-4">The Editing Flow</h2>
             <p className="text-accent/70 font-sans">Master the rhythm of high-end cinematic editing.</p>
           </div>
-          <StealthPlayer url="/video.mp4" />
+          <StealthPlayer url={`${import.meta.env.BASE_URL}video.mp4`} />
         </div>
       </section>
 
